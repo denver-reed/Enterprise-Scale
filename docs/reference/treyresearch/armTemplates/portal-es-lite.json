@@ -410,7 +410,7 @@
                         "filterPlaceholder": "Filter items ...",
                         "multiLine": true,
                         "defaultValue": "[if(not(empty(steps('esGoalState').esMgmtSub)),steps('esGoalState').esMgmtSub,'')]",
-                        "visible": "[and(equals(steps('esConnectivityGoalState').esHub,'Yes'),empty(steps('esGoalState').esMgmtSub))]",
+                        "visible": true,
                         "constraints": {
                             "allowedValues": "[map(steps('esConnectivityGoalState').nwSubsApi.value, (sub) => parse(concat('{\"label\":\"', sub.displayName, '\",\"description\":\"', sub.subscriptionId, '\",\"value\":\"', toLower(sub.subscriptionId), '\"}')) )]",
                             "required": "[and(equals(steps('esConnectivityGoalState').esHub,'Yes'),empty(steps('esGoalState').esMgmtSub))]"
